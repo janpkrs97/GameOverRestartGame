@@ -21,5 +21,19 @@ public class StudentAnimationController : MonoBehaviour
     public void OnMouseDown()
     {
         Debug.Log("student selected: " + studentID);
+        simulationController.currSelectedStudentID = studentID;
+    }
+
+    public void LevelOfUnrest()
+    {
+
+    }
+
+    public void PlayIdleAnimation()
+    {
+        talkingAnimation = false;
+        shoutAnimation = false;
+        raiseHandAnimation = false;
+        idleAnimation = true;
     }
 }
