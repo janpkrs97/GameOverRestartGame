@@ -12,10 +12,10 @@ public class SupervisorCameraController : MonoBehaviour
 
     void Start()
     {
-        supervisorCameraCount = 3;
-        activeSupervisorCamera = 1;
+        supervisorCameraCount = supervisorCameras.Length;
         DisableAllCameras();
-        EnableCamera(1);
+        EnableCamera(0);
+        activeSupervisorCamera = 0;
     }
 
     public void EnableCamera(int camID)
@@ -33,29 +33,41 @@ public class SupervisorCameraController : MonoBehaviour
 
     public void SwitchCamera()
     {
-        int activeCam = 0;
+        DisableAllCameras();
+
+        int activeCam = activeSupervisorCamera;
 
         switch (activeCam)
         {
+            case 0:
+                {
+                    EnableCamera(1);
+                    activeSupervisorCamera = 1;
+                    break;
+                }
+
             case 1:
                 {
+                    EnableCamera(2);
+                    activeSupervisorCamera = 2;
                     break;
                 }
 
             case 2:
                 {
-                    break;
-                }
-
-            case 3:
-                {
+                    EnableCamera(0);
+                    activeSupervisorCamera = 0;
                     break;
                 }
 
             default:
                 {
+                    EnableCamera(0);
+                    activeSupervisorCamera = 0;
                     break;
                 }
         }
+
+        
     }
 }
