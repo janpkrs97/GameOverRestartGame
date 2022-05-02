@@ -7,6 +7,11 @@ public class StudentAnimationController : MonoBehaviour
     public SimulationController simulationController;
     public int studentID;
 
+    public bool talkingAnimation;
+    public bool shoutAnimation;
+    public bool raiseHandAnimation;
+    public bool idleAnimation;
+
     void Start()
     {
         
