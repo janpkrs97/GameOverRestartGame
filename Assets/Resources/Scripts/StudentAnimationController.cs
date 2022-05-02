@@ -10,12 +10,22 @@ public class StudentAnimationController : MonoBehaviour
     [SerializeField] private float unrestCatchup;
     [SerializeField] private float unrestDecrease;
     
+    private float currentUnrest;
+    public float Unrest {get;set;} // max unrest
+
     int UnrestHash; // faster than string comparison
 
-    private float unrest; // current unrest
-    public float Unrest {get;set;} // max unrest - for now
+    public enum States{
+        idle,
+        shouting,
+        talking,
+        raisingHand
+    }
 
-    // states
+    [Header("State Management")]
+    [SerializeField] private States state;
+
+    private bool idle;
     private bool shouting;
     private bool talking;
     private bool raiseHand;
@@ -37,20 +47,20 @@ public class StudentAnimationController : MonoBehaviour
 
     private void LevelOfUnrest()
     {
-        if(unrest < Unrest)
-            unrest += Time.deltaTime * unrestCatchup;
+        if(currentUnrest < Unrest)
+            currentUnrest += Time.deltaTime * unrestCatchup;
 
-        if(unrest > Unrest)
-            unrest -= Time.deltaTime * unrestDecrease;
+        if(currentUnrest > Unrest)
+            currentUnrest -= Time.deltaTime * unrestDecrease;
 
-        if(unrest < 0)
-            unrest = 0;
-        if(unrest > 1)
-            unrest = 1;
+        if(currentUnrest < 0)
+            currentUnrest = 0;
+        if(currentUnrest > 1)
+            currentUnrest = 1;
     }
 
     private void PlayAnimations(){
-        animator.SetFloat(UnrestHash, unrest);
+        animator.SetFloat(UnrestHash, currentUnrest);
         animator.SetBool("isShouting", shouting);
         animator.SetBool("isTalking", talking);
         animator.SetBool("raiseHand", raiseHand);
@@ -59,28 +69,30 @@ public class StudentAnimationController : MonoBehaviour
     private void DebugTesting(){
         if(!Debug.isDebugBuild) return;
 
-        if(Input.GetKeyDown("s")){
-            shouting = !shouting;
-            talking = false;
-            raiseHand = false;
-        }
+        if(Input.GetKeyDown("i"))
+            SetState(States.idle);
 
-        if(Input.GetKeyDown("t")){
-            shouting = false;
-            talking = !talking;
-            raiseHand = false;
-        }
+        if(Input.GetKeyDown("s"))
+            SetState(States.shouting);
 
-        if(Input.GetKeyDown("h")){
-            shouting = false;
-            talking = false;
-            raiseHand = !raiseHand;
-        }
+        if(Input.GetKeyDown("t"))
+            SetState(States.talking);
+
+        if(Input.GetKeyDown("h"))
+            SetState(States.raisingHand);
+    }
+
+    public void SetState(States _state){
+        state = _state;
+
+        idle = (state == States.idle);
+        shouting = (state == States.shouting);
+        talking = (state == States.talking);
+        raiseHand = (state == States.raisingHand);
     }
 
     public void OnMouseDown()
     {
-        Debug.Log("student selected: " + studentID);
-        SimulationController.Instance.currSelectedStudentID = studentID;
+        SimulationController.Instance.SetActiveStudent(this);
     }
 }
