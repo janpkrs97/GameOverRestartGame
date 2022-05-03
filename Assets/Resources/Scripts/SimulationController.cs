@@ -14,20 +14,36 @@ public class SimulationController : Singleton<SimulationController>
     [SerializeField] private Slider unrestSlider;
     [SerializeField] private TMP_Text studentTitle;
     [SerializeField] private GameObject studentControlBox;
+    [Space] [SerializeField] private Transform behaviorContainer;
+    [SerializeField] private BehaviorButton behaviorBtnPrefab;
 
-    private List<StudentAnimationController> students = new List<StudentAnimationController>();
-    private float globalUnrest;
+    [HideInInspector] public List<StudentAnimationController> students = new List<StudentAnimationController>();
+    public float GlobalUnrest {get;set;}
 
-    void Start(){
-        if(!currSelectedStudent) studentControlBox.SetActive(false);
+    void Start(){    
+        if(behaviorContainer && behaviorBtnPrefab){
+            List<Behavior> behaviors = Resources.LoadAll<Behavior>("Behaviors/Student").ToList();
+            for(int i = 0;i < behaviors.Count;i++){
+                BehaviorButton btn = Instantiate(behaviorBtnPrefab, behaviorContainer);
+                btn.Set(behaviors[i]);
+            }
+        }
+
+        studentControlBox.SetActive(false);
     }
 
-    public void GlobalUnrest(){
+    public void SetGlobalUnrest(){
         // in the demo the slider seemed to control how many students were in an unrested state, rather than the unrest of them all.
         // we can change this in another branch when we have a more concrete direction
-        globalUnrest = unrestSlider.value;
+        GlobalUnrest = unrestSlider.value;
         if(students.Count <= 0) students = FindObjectsOfType<StudentAnimationController>().ToList();
-        foreach(StudentAnimationController student in students) student.Unrest = globalUnrest;
+        foreach(StudentAnimationController student in students) student.Unrest = GlobalUnrest;
+    }
+
+    public void SetActiveStudent(StudentAnimationController student){
+        currSelectedStudent = student;
+        studentTitle.text = "Selected Student: " + currSelectedStudent.studentID;
+        if(currSelectedStudent && !studentControlBox.activeInHierarchy) studentControlBox.SetActive(true);
     }
 
     public void SetStudentState(string strState){
@@ -46,11 +62,5 @@ public class SimulationController : Singleton<SimulationController>
     public void SetStudentState(StudentAnimationController.States state){
         if(!currSelectedStudent) return;
         currSelectedStudent.SetState(state);
-    }
-
-    public void SetActiveStudent(StudentAnimationController student){
-        currSelectedStudent = student;
-        studentTitle.text = "Selected Student: " + currSelectedStudent.studentID;
-        if(currSelectedStudent && !studentControlBox.activeInHierarchy) studentControlBox.SetActive(true);
     }
 }

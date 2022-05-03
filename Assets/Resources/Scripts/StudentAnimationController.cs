@@ -69,16 +69,16 @@ public class StudentAnimationController : MonoBehaviour
     private void DebugTesting(){
         if(!Debug.isDebugBuild) return;
 
-        if(Input.GetKeyDown("i"))
+        if(Input.GetKeyDown("0"))
             SetState(States.idle);
 
-        if(Input.GetKeyDown("s"))
+        if(Input.GetKeyDown("1"))
             SetState(States.shouting);
 
-        if(Input.GetKeyDown("t"))
+        if(Input.GetKeyDown("2"))
             SetState(States.talking);
 
-        if(Input.GetKeyDown("h"))
+        if(Input.GetKeyDown("3"))
             SetState(States.raisingHand);
     }
 
