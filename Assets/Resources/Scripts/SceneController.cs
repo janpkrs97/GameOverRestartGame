@@ -13,7 +13,11 @@ public class SceneController : MonoBehaviour
         }
         else if (classID == 2)
         {
-            SceneManager.LoadScene("Circle");
+            SceneManager.LoadScene("Standard"); // change to new scene
+        }
+        else
+        {
+            SceneManager.LoadScene("Standard");
         }
     }
 }
