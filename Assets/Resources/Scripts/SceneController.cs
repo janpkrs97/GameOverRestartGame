@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
+    void Awake()
+    {
+        DontDestroyOnLoad(this);
+    }
+
     public void ChangeScene(int classID)
     {
         if (classID == 1)
