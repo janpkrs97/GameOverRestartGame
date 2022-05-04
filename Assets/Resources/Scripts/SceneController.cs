@@ -18,7 +18,7 @@ public class SceneController : MonoBehaviour
         }
         else if (classID == 2)
         {
-            SceneManager.LoadScene("Standard"); // change to new scene
+            SceneManager.LoadScene("Round");
         }
         else
         {

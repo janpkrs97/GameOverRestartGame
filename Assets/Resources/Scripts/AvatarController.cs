@@ -21,10 +21,16 @@ public class AvatarController : MonoBehaviour
 
     void Update()
     {
-        if (SceneManager.GetActiveScene().name != "Menu" && !spawnedAvatarNewScene)
+        if (SceneManager.GetActiveScene().name == "Standard" && !spawnedAvatarNewScene)
         {
             Instantiate(teachers[avatarID - 1], new Vector3(2f, 0f, 1.5f), Quaternion.identity);
-            Debug.Log("Spawned avatar " + avatarID + "into new scene");
+            Debug.Log("Spawned avatar " + avatarID + " into standard scene");
+            spawnedAvatarNewScene = true;
+        }
+        else if (SceneManager.GetActiveScene().name == "Round" && !spawnedAvatarNewScene)
+        {
+            Instantiate(teachers[avatarID - 1], new Vector3(0f, 0f, 0f), Quaternion.identity);
+            Debug.Log("Spawned avatar " + avatarID + " into round scene");
             spawnedAvatarNewScene = true;
         }
     }
