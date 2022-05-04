@@ -149,6 +149,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   btn: {fileID: 545850836586311587}
   txt: {fileID: 5357276223390327821}
+  img: {fileID: 4976387097165533084}
+  activeColor: {r: 0.5206479, g: 0.9433962, b: 0.5206479, a: 1}
+  offColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &4729013773640930776
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,7 +245,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 14
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1

@@ -21,6 +21,9 @@ MonoBehaviour:
     - rid: 7261472836485382148
       type: {class: SetState_Action, ns: , asm: Assembly-CSharp}
       data:
+        ActionFinished:
+          m_PersistentCalls:
+            m_Calls: []
         stateToSet: 0
         target: 0
         randomRange: 1

@@ -37,5 +37,7 @@ public class SetState_Action : Action
             foreach(StudentAnimationController student in SimulationController.Instance.students)
                 if(student.Unrest >= unrestRange) student.SetState(stateToSet);
         }
+
+        ActionFinished.Invoke();
     }   
 }

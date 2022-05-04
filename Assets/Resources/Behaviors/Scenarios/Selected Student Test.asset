@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c68aad223c5985846ae24448fc89324d, type: 3}
+  m_Name: Selected Student Test
+  m_EditorClassIdentifier: 
+  scenarioName: Selected Student Test
+  scenarioType: 0
+  behaviorList:
+  - {fileID: 11400000, guid: c55a706f10ec2ff49a946c823747dc14, type: 2}
+  - {fileID: 11400000, guid: 2fbff9b9480a3bc4eac55c52a17821c9, type: 2}
+  - {fileID: 11400000, guid: bf360ce2b7ee7ba4ea485dbc0bceca74, type: 2}
+  - {fileID: 11400000, guid: 215211085bdace74ca36f77177515904, type: 2}
+  - {fileID: 11400000, guid: 3085a0f15545b9147b689264ab8e1ae9, type: 2}
+  customList: []
+  references:
+    version: 2
+    RefIds: []

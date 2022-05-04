@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [System.Serializable]
 public abstract class Action
@@ -14,4 +15,5 @@ public abstract class Action
 
 
     public virtual void PerformAction(){}
+    [HideInInspector] public UnityEvent ActionFinished = new UnityEvent();
 }

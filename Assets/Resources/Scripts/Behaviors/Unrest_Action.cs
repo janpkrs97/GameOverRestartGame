@@ -11,12 +11,13 @@ public class Unrest_Action : Action
 
     public override void PerformAction()
     {
+        SimulationController controller = SimulationController.Instance;
         if(target == Target.selectedStudent)
-            SimulationController.Instance.currSelectedStudent.Unrest = unrest;
+            controller.currSelectedStudent.Unrest = unrest;
         else if(target == Target.all)
-            foreach(StudentAnimationController student in SimulationController.Instance.students) student.Unrest = unrest;
+            foreach(StudentAnimationController student in controller.students) student.Unrest = unrest;
         else if(target == Target.random){
-            List<StudentAnimationController> tempList = new List<StudentAnimationController>(SimulationController.Instance.students);
+            List<StudentAnimationController> tempList = new List<StudentAnimationController>(controller.students);
 
             int percent = (int)(randomRange / tempList.Count);
             for(int i = 0;i < percent;i++){
@@ -27,5 +28,9 @@ public class Unrest_Action : Action
         }
         else
             Debug.LogWarning("No implementation for unrest targetting " + target.ToString());
+
+        controller.SetSelectedSliderValue(unrest);
+
+        ActionFinished.Invoke();
     }
 }

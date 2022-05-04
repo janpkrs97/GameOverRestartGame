@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf134ba3f1ea10c43bb96afd60f7284a, type: 3}
-  m_Name: Raise Hand
+  m_Name: Short Delay
   m_EditorClassIdentifier: 
-  behaviorName: Raise Hand
+  behaviorName: Short Delay
   actions:
-  - rid: 7261472836485382147
+  - rid: 7261472858884276228
   references:
     version: 2
     RefIds:
-    - rid: 7261472836485382147
-      type: {class: SetState_Action, ns: , asm: Assembly-CSharp}
+    - rid: 7261472858884276228
+      type: {class: Delay_Action, ns: , asm: Assembly-CSharp}
       data:
-        stateToSet: 3
-        target: 0
-        randomRange: 1
-        unrestRange: 0
+        ActionFinished:
+          m_PersistentCalls:
+            m_Calls: []
+        waitTime: 2
