@@ -7,7 +7,7 @@ using TMPro;
 public class BehaviorButton : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private Button btn;
+    public Button btn;
     [SerializeField] private TMP_Text txt;
     [SerializeField] private Image img;
     [Space]
@@ -68,4 +68,6 @@ public class BehaviorButton : MonoBehaviour
         active = false;
         img.color = offColor;
     }
+
+    public Behavior GetBehavior() {return behavior;}
 }
