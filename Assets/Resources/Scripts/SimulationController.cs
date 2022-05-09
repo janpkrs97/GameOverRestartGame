@@ -25,6 +25,8 @@ public class SimulationController : Singleton<SimulationController>
     [HideInInspector] public List<StudentAnimationController> students = new List<StudentAnimationController>();
     public float GlobalUnrest {get;set;}
 
+    private List<BehaviorButton> scenarioButtons = new List<BehaviorButton>();
+
     void Start(){    
         SetupUI();
         if(students.Count <= 0) students = FindObjectsOfType<StudentAnimationController>().ToList();
@@ -44,6 +46,7 @@ public class SimulationController : Singleton<SimulationController>
             for(int i = 0;i < scenarios.Count;i++){
                 BehaviorButton btn = Instantiate(behaviorBtnPrefab, scenarioContainer);
                 btn.Set(scenarios[i]);
+                scenarioButtons.Add(btn);
             }
         }
 
@@ -121,6 +124,25 @@ public class SimulationController : Singleton<SimulationController>
             int n = scenario.behaviorList.Count-1;
             scenario.behaviorList[n].actions[scenario.behaviorList[n].actions.Count-1].ActionFinished.AddListener(btn.Reset);
             scenario.behaviorList[0].actions[0].PerformAction();
+        }
+    }
+
+    public void RebuildScenarioButtons(){
+        if(scenarioButtons.Count > 0){
+            for(int i = 0;i < scenarioButtons.Count;i++){
+                scenarioButtons[i].gameObject.SetActive(false);
+            }
+
+            scenarioButtons.Clear();
+        }
+
+        if(scenarioContainer){
+            List<Scenario> scenarios = Resources.LoadAll<Scenario>("Behaviors/Scenarios").ToList();
+            for(int i = 0;i < scenarios.Count;i++){
+                BehaviorButton btn = Instantiate(behaviorBtnPrefab, scenarioContainer);
+                btn.Set(scenarios[i]);
+                scenarioButtons.Add(btn);
+            }
         }
     }
 }
