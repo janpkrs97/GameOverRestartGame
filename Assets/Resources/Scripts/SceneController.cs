@@ -18,7 +18,7 @@ public class SceneController : MonoBehaviour
         }
         else if (classID == 2)
         {
-            SceneManager.LoadScene("Round");
+            SceneManager.LoadScene("Groups");
         }
         else
         {
