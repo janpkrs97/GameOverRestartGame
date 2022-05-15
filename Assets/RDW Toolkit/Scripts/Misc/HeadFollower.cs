@@ -3,7 +3,6 @@ using System.Collections;
 
 public class HeadFollower : MonoBehaviour {
 
-    [HideInInspector]
     public RedirectionManager redirectionManager;
 
 	// Use this for initialization

@@ -206,7 +206,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   redirectionManager: {fileID: 0}
   bodyCollider: {fileID: 0}
-  RESET_TRIGGER_BUFFER: 0.5
+  RESET_TRIGGER_BUFFER: 0.1
   xLength: 0
   zLength: 0
 --- !u!1 &2613353593817617462
@@ -251,8 +251,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2613353593817292360}
   - component: {fileID: 2613353593806277398}
-  - component: {fileID: 2613353593817748154}
+  - component: {fileID: 7690977604978981703}
   - component: {fileID: 2613353593817748157}
+  - component: {fileID: 2613353593817748154}
   m_Layer: 0
   m_Name: Teacher01_RDW
   m_TagString: Untagged
@@ -327,7 +328,7 @@ MonoBehaviour:
   targetWaypoint: {fileID: 0}
   inReset: 0
   startTimeOfProgram: 
---- !u!114 &2613353593817748154
+--- !u!114 &7690977604978981703
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -336,10 +337,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 2613353593817633770}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06732bce9ea3dcd419d50604456b9bbd, type: 3}
+  m_Script: {fileID: 11500000, guid: b4936f2eec754174cb7e557e06c62c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   redirectionManager: {fileID: 0}
+  runInSimulationMode: 0
+  condAlgorithm: 0
+  condReset: 1
+  condPath: 1
+  condExperiment: 0
+  MAX_TRIALS: 10
+  runAtFullSpeed: 0
+  onlyRandomizeForward: 1
+  averageTrialResults: 0
+  DISTANCE_TO_WAYPOINT_THRESHOLD: 0.3
+  experimentInProgress: 0
+  waypoints: []
+  waypointIterator: 0
+  userIsWalking: 0
 --- !u!114 &2613353593817748157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,6 +365,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4784688d9d6861343a2a9c50af806006, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  redirectionManager: {fileID: 0}
+--- !u!114 &2613353593817748154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2613353593817633770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06732bce9ea3dcd419d50604456b9bbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   redirectionManager: {fileID: 0}
@@ -624,9 +652,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2613353593817292538}
-  - component: {fileID: 2613353593815804216}
-  - component: {fileID: 2613353593806382054}
-  - component: {fileID: 2613353593806279922}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -649,80 +674,6 @@ Transform:
   m_Father: {fileID: 2613353593817279998}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!20 &2613353593815804216
-Camera:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2613353593817716192}
-  m_Enabled: 0
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0.019607844}
-  m_projectionMatrixMode: 1
-  m_GateFitMode: 2
-  m_FOVAxisMode: 0
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 0.5
-    height: 0.5
-  near clip plane: 0.3
-  far clip plane: 50
-  field of view: 60
-  orthographic: 0
-  orthographic size: 5
-  m_Depth: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 2147483647
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 0
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
---- !u!114 &2613353593806382054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2613353593817716192}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fda272f4e55a1804fa723a0d2b92948e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  redirectionManager: {fileID: 0}
-  useAutoAdjust: 1
-  translationSpeed: 1
-  rotationSpeed: 90
---- !u!114 &2613353593806279922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2613353593817716192}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6032d3c692e273d40a2c3f03b60f2ee8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  redirectionManager: {fileID: 0}
-  translationSpeed: 1
-  rotationSpeed: 90
 --- !u!1001 &2613353593549922594
 PrefabInstance:
   m_ObjectHideFlags: 0
