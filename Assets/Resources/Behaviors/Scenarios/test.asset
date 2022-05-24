@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c68aad223c5985846ae24448fc89324d, type: 3}
-  m_Name: ki
+  m_Name: test
   m_EditorClassIdentifier: 
-  scenarioName: ki
+  scenarioName: test
   scenarioType: 0
   behaviorList:
-  - {fileID: 11400000, guid: ffc965e55c87eb04eb2c5a8137b9b78c, type: 2}
-  - {fileID: 11400000, guid: 2fbff9b9480a3bc4eac55c52a17821c9, type: 2}
+  - {fileID: 11400000, guid: a4bba863f66642e48950f79ac77d6bfc, type: 2}
+  - {fileID: 11400000, guid: bf360ce2b7ee7ba4ea485dbc0bceca74, type: 2}
+  - {fileID: 11400000, guid: d306d9467ade2a44e9072f65c81138db, type: 2}
   customList: []
   references:
     version: 2
