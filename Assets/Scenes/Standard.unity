@@ -257,7 +257,7 @@ PrefabInstance:
     - target: {fileID: 912105963639381065, guid: 832edcf53219afe4aa8e32e97d345a43,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 912105963807264751, guid: 832edcf53219afe4aa8e32e97d345a43,
         type: 3}
@@ -272,17 +272,27 @@ PrefabInstance:
     - target: {fileID: 912105964908784470, guid: 832edcf53219afe4aa8e32e97d345a43,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 912105964991391522, guid: 832edcf53219afe4aa8e32e97d345a43,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 912105965011507590, guid: 832edcf53219afe4aa8e32e97d345a43,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 462099894}
+    - target: {fileID: 912105965011507590, guid: 832edcf53219afe4aa8e32e97d345a43,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetGlobalUnrest
       objectReference: {fileID: 0}
     - target: {fileID: 912105965264628343, guid: 832edcf53219afe4aa8e32e97d345a43,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 832edcf53219afe4aa8e32e97d345a43, type: 3}
@@ -1521,7 +1531,7 @@ Camera:
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 1
+  m_TargetDisplay: 0
   m_TargetEye: 0
   m_HDR: 1
   m_AllowMSAA: 1
@@ -3107,7 +3117,7 @@ Camera:
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 1
+  m_TargetDisplay: 0
   m_TargetEye: 0
   m_HDR: 1
   m_AllowMSAA: 1
@@ -6456,7 +6466,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1413421604
 Transform:
   m_ObjectHideFlags: 0
@@ -7989,7 +7999,7 @@ Camera:
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 1
+  m_TargetDisplay: 0
   m_TargetEye: 0
   m_HDR: 1
   m_AllowMSAA: 1

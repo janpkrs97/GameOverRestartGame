@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68aad223c5985846ae24448fc89324d, type: 3}
   m_Name: Custom Scenario
   m_EditorClassIdentifier: 
-  scenarioName: Custom Test
+  scenarioName: Raise Hands
   scenarioType: 1
   behaviorList: []
   customList:
