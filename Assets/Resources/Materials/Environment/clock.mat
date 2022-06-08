@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: chair
+  m_Name: clock
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ValidKeywords:
   - _METALLICGLOSSMAP
@@ -24,7 +24,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: dcad6b7f8d9fcb7448c6da80bbcaf43e, type: 3}
+        m_Texture: {fileID: 2800000, guid: 492a1e9b6b043a44ba9782ffdcaae5ce, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -44,19 +44,19 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 7ce2ef85c3da32945b726bd35db2767a, type: 3}
+        m_Texture: {fileID: 2800000, guid: d6215c3eba5e3754e93a0b5091a67534, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: d4f271549fc352e42b301529f707724e, type: 3}
+        m_Texture: {fileID: 2800000, guid: b23dfb6a3195fb84bb277860f321294c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 2ae642f1271a1f34e86a69a7c0fc299d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
-        m_Texture: {fileID: 2800000, guid: 74cb52bd47dbf9b47b3c16ee81c94fa1, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1d01df9dd53811446ad7d02a356a04ab, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
