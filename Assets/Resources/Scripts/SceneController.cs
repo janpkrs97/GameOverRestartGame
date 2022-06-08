@@ -20,6 +20,10 @@ public class SceneController : MonoBehaviour
         {
             SceneManager.LoadScene("Groups");
         }
+        else if (classID == 3)
+        {
+            SceneManager.LoadScene("LocomotionTest");
+        }
         else
         {
             SceneManager.LoadScene("Standard");
