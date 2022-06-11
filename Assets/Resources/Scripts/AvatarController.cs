@@ -5,9 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class AvatarController : MonoBehaviour
 {
+    public int locomotionID = 0;
     public int avatarID = 0;
 
-    public GameObject[] teachers;
+
+    public GameObject[] teachersTel;
+    public GameObject[] teachersRDW;
 
     public bool spawnedAvatarNewScene;
 
@@ -26,31 +29,48 @@ public class AvatarController : MonoBehaviour
     void SetupSpawnLocations()
     {
         // Menu
-        spawnLocMenu.position = new Vector3(0f, 0f, 0);
-        spawnLocMenu.Rotate(0f, 90f, 0f);
+        //spawnLocMenu.position = new Vector3(0f, 0f, 0);
 
         // Standard
-        spawnLocStandard.position = new Vector3(1.75f, 0f, 0.75f);
-        spawnLocStandard.Rotate(0f, 270f, 0f);
+        //spawnLocStandard.position = new Vector3(1.75f, 0f, 0.75f);
+        //spawnLocStandard.Rotate(0f, 270f, 0f);
 
         // Groups
-        spawnLocGroups.position = new Vector3(1.5f, 0f, 0.75f);
-        spawnLocGroups.Rotate(0f, 270f, 0f);
+        //spawnLocGroups.position = new Vector3(1.5f, 0f, 0.75f);
+        //spawnLocGroups.Rotate(0f, 270f, 0f);
     }
 
     void Update()
     {
         if (SceneManager.GetActiveScene().name == "Standard" && !spawnedAvatarNewScene)
         {
-            Instantiate(teachers[avatarID - 1], spawnLocStandard.position, spawnLocStandard.rotation);
-            Debug.Log("Spawned avatar " + avatarID + " into standard scene");
-            spawnedAvatarNewScene = true;
+            if (locomotionID == 1)
+            {
+                Instantiate(teachersTel[avatarID - 1], spawnLocStandard.position, spawnLocStandard.rotation);
+                Debug.Log("Spawned avatar " + avatarID + " into standard scene with locomotion " + locomotionID);
+                spawnedAvatarNewScene = true;
+            }
+            else
+            {
+                Instantiate(teachersRDW[avatarID - 1], spawnLocStandard.position, spawnLocStandard.rotation);
+                Debug.Log("Spawned avatar " + avatarID + " into standard scene with locomotion " + locomotionID);
+                spawnedAvatarNewScene = true;
+            }
         }
         else if (SceneManager.GetActiveScene().name == "Groups" && !spawnedAvatarNewScene)
         {
-            Instantiate(teachers[avatarID - 1], spawnLocGroups.position, spawnLocGroups.rotation);
-            Debug.Log("Spawned avatar " + avatarID + " into groups scene");
-            spawnedAvatarNewScene = true;
+            if (locomotionID == 1)
+            {
+                Instantiate(teachersTel[avatarID - 1], spawnLocGroups.position, spawnLocGroups.rotation);
+                Debug.Log("Spawned avatar " + avatarID + " into groups scene with locomotion " + locomotionID);
+                spawnedAvatarNewScene = true;
+            }
+            else
+            {
+                Instantiate(teachersRDW[avatarID - 1], spawnLocGroups.position, spawnLocGroups.rotation);
+                Debug.Log("Spawned avatar " + avatarID + " into groups scene with locomotion " + locomotionID);
+                spawnedAvatarNewScene = true;
+            }
         }
     }
 
@@ -58,6 +78,12 @@ public class AvatarController : MonoBehaviour
     {
         avatarID = id;
         Debug.Log("selected avatar: " + avatarID);
-        Instantiate(teachers[id -1], spawnLocMenu.position, spawnLocMenu.rotation);
+        Instantiate(teachersTel[id -1], spawnLocMenu.position, spawnLocMenu.rotation);
+    }
+
+    public void SetLocomotionID(int id)
+    {
+        locomotionID = id;
+        Debug.Log("selected locomotion system: " + locomotionID);
     }
 }

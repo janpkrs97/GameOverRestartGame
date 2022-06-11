@@ -14,6 +14,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Groups.unity
     guid: 68b0b654eea177b4d8f58868697fd6f2
+  - enabled: 1
+    path: Assets/Scenes/LocomotionTest.unity
+    guid: cbfea753ee8a34c48a7c417d857bfe5c
+  - enabled: 1
+    path: Assets/Scenes/Main.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260,
       type: 2}
