@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
+using Unity.XR.CoreUtils;
 
 public class StudentAnimationController : MonoBehaviour
 {
@@ -98,12 +99,16 @@ public class StudentAnimationController : MonoBehaviour
     }
 
     private void SetAimTarget(){
-        GameObject teacherObject = GameObject.Find("VR Rig (Basic)");
+        Transform teacherObject = null;
+        
+        if(!SimulationController.Instance.riggingByRoot) teacherObject = GameObject.FindObjectOfType<XROrigin>().gameObject.transform;
+        else teacherObject = GameObject.FindObjectOfType<XROrigin>().gameObject.transform.parent;
+        
         if(!teacherObject) return;
 
         var data = aim.data.sourceObjects;
         data.Clear();
-        data.Add(new WeightedTransform(teacherObject.transform, 1));
+        data.Add(new WeightedTransform(teacherObject, 1));
         aim.data.sourceObjects = data;
         rig.Build();
     }
