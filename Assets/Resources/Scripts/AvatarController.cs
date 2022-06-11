@@ -5,9 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class AvatarController : MonoBehaviour
 {
+    public int locomotionID = 0;
     public int avatarID = 0;
 
-    public GameObject[] teachers;
+
+    public GameObject[] teachersTel;
+    public GameObject[] teachersRDW;
 
     public bool spawnedAvatarNewScene;
 
@@ -42,15 +45,33 @@ public class AvatarController : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "Standard" && !spawnedAvatarNewScene)
         {
-            Instantiate(teachers[avatarID - 1], spawnLocStandard.position, spawnLocStandard.rotation);
-            Debug.Log("Spawned avatar " + avatarID + " into standard scene");
-            spawnedAvatarNewScene = true;
+            if (locomotionID == 1)
+            {
+                Instantiate(teachersTel[avatarID - 1], spawnLocStandard.position, spawnLocStandard.rotation);
+                Debug.Log("Spawned avatar " + avatarID + " into standard scene with locomotion " + locomotionID);
+                spawnedAvatarNewScene = true;
+            }
+            else
+            {
+                Instantiate(teachersRDW[avatarID - 1], spawnLocStandard.position, spawnLocStandard.rotation);
+                Debug.Log("Spawned avatar " + avatarID + " into standard scene with locomotion " + locomotionID);
+                spawnedAvatarNewScene = true;
+            }
         }
         else if (SceneManager.GetActiveScene().name == "Groups" && !spawnedAvatarNewScene)
         {
-            Instantiate(teachers[avatarID - 1], spawnLocGroups.position, spawnLocGroups.rotation);
-            Debug.Log("Spawned avatar " + avatarID + " into groups scene");
-            spawnedAvatarNewScene = true;
+            if (locomotionID == 1)
+            {
+                Instantiate(teachersTel[avatarID - 1], spawnLocGroups.position, spawnLocGroups.rotation);
+                Debug.Log("Spawned avatar " + avatarID + " into groups scene with locomotion " + locomotionID);
+                spawnedAvatarNewScene = true;
+            }
+            else
+            {
+                Instantiate(teachersRDW[avatarID - 1], spawnLocGroups.position, spawnLocGroups.rotation);
+                Debug.Log("Spawned avatar " + avatarID + " into groups scene with locomotion " + locomotionID);
+                spawnedAvatarNewScene = true;
+            }
         }
     }
 
@@ -58,6 +79,12 @@ public class AvatarController : MonoBehaviour
     {
         avatarID = id;
         Debug.Log("selected avatar: " + avatarID);
-        Instantiate(teachers[id -1], spawnLocMenu.position, spawnLocMenu.rotation);
+        Instantiate(teachersTel[id -1], spawnLocMenu.position, spawnLocMenu.rotation);
+    }
+
+    public void SetLocomotionID(int id)
+    {
+        locomotionID = id;
+        Debug.Log("selected locomotion system: " + locomotionID);
     }
 }
