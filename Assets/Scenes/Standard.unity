@@ -9154,6 +9154,7 @@ MonoBehaviour:
   currStudentUnrestSlider: {fileID: 15023919}
   scenarioContainer: {fileID: 1414234786}
   students: []
+  riggingByRoot: 0
 --- !u!1001 &462746401
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33765,6 +33766,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4988220318764541584, guid: a6e895d6183283646af6c98335f6a0dd,
+        type: 3}
+      propertyPath: m_Data.m_Offset.x
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 5330254398297818831, guid: a6e895d6183283646af6c98335f6a0dd,
         type: 3}
