@@ -42,7 +42,8 @@ public class StudentAnimationController : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         UnrestHash = Animator.StringToHash("unrestLevel");
-        if(rig) SetAimTarget();
+        //if(rig) SetAimTarget();
+        if(rig) Invoke("SetAimTarget", 0.2f);
     }
 
     void Update()
@@ -99,16 +100,16 @@ public class StudentAnimationController : MonoBehaviour
     }
 
     private void SetAimTarget(){
-        Transform teacherObject = null;
+        GameObject teacherObject = null;
         
-        if(!SimulationController.Instance.riggingByRoot) teacherObject = GameObject.FindObjectOfType<XROrigin>().gameObject.transform;
-        else teacherObject = GameObject.FindObjectOfType<XROrigin>().gameObject.transform.parent;
+        if(!SimulationController.Instance.riggingByRoot) teacherObject = GameObject.FindObjectOfType<XROrigin>().gameObject;
+        else teacherObject = GameObject.FindObjectOfType<XROrigin>().gameObject.transform.parent.gameObject;
         
         if(!teacherObject) return;
 
         var data = aim.data.sourceObjects;
         data.Clear();
-        data.Add(new WeightedTransform(teacherObject, 1));
+        data.Add(new WeightedTransform(teacherObject.transform, 1));
         aim.data.sourceObjects = data;
         rig.Build();
     }
