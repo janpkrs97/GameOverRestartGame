@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations.Rigging;
 
 public class StudentAnimationController : MonoBehaviour
 {
@@ -14,6 +15,10 @@ public class StudentAnimationController : MonoBehaviour
     public float Unrest {get;set;} // max unrest
 
     int UnrestHash; // faster than string comparison
+
+    [Header("References")]
+    [SerializeField] MultiAimConstraint aim;
+    [SerializeField] RigBuilder rig;
 
     public enum States{
         idle,
@@ -36,6 +41,7 @@ public class StudentAnimationController : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         UnrestHash = Animator.StringToHash("unrestLevel");
+        if(rig) SetAimTarget();
     }
 
     void Update()
@@ -89,6 +95,17 @@ public class StudentAnimationController : MonoBehaviour
         shouting = (state == States.shouting);
         talking = (state == States.talking);
         raiseHand = (state == States.raisingHand);
+    }
+
+    private void SetAimTarget(){
+        GameObject teacherObject = GameObject.Find("VR Rig (Basic)");
+        if(!teacherObject) return;
+
+        var data = aim.data.sourceObjects;
+        data.Clear();
+        data.Add(new WeightedTransform(teacherObject.transform, 1));
+        aim.data.sourceObjects = data;
+        rig.Build();
     }
 
     public void OnMouseDown()
