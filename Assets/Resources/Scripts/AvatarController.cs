@@ -29,16 +29,15 @@ public class AvatarController : MonoBehaviour
     void SetupSpawnLocations()
     {
         // Menu
-        spawnLocMenu.position = new Vector3(0f, 0f, 0);
-        spawnLocMenu.Rotate(0f, 90f, 0f);
+        //spawnLocMenu.position = new Vector3(0f, 0f, 0);
 
         // Standard
-        spawnLocStandard.position = new Vector3(1.75f, 0f, 0.75f);
-        spawnLocStandard.Rotate(0f, 270f, 0f);
+        //spawnLocStandard.position = new Vector3(1.75f, 0f, 0.75f);
+        //spawnLocStandard.Rotate(0f, 270f, 0f);
 
         // Groups
-        spawnLocGroups.position = new Vector3(1.5f, 0f, 0.75f);
-        spawnLocGroups.Rotate(0f, 270f, 0f);
+        //spawnLocGroups.position = new Vector3(1.5f, 0f, 0.75f);
+        //spawnLocGroups.Rotate(0f, 270f, 0f);
     }
 
     void Update()

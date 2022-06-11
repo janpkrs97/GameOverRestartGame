@@ -12831,7 +12831,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 728f186747cefc145a9c2e64bd29a454, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  telProv: {fileID: 0}
+  telArea: {fileID: 693486469}
 --- !u!1001 &695554379
 PrefabInstance:
   m_ObjectHideFlags: 0
