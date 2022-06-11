@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7963457424659561407}
   m_Layer: 0
   m_Name: Locomotion System
-  m_TagString: Untagged
+  m_TagString: TeleportationProvider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -570,7 +570,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7098445175770879804}
-  - component: {fileID: 3453784373410379391}
   m_Layer: 0
   m_Name: Teacher03_Tel
   m_TagString: Untagged
@@ -595,19 +594,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3453784373410379391
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7098445175770879805}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 728f186747cefc145a9c2e64bd29a454, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  teleportationProvider: {fileID: 570411183351318733}
 --- !u!1 &7098445175774553291
 GameObject:
   m_ObjectHideFlags: 0

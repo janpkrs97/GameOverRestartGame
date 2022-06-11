@@ -222,7 +222,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4919787353541858916}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 0.0015, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -755,7 +755,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   redirectionManager: {fileID: 0}
   bodyCollider: {fileID: 0}
-  RESET_TRIGGER_BUFFER: 0.5
+  RESET_TRIGGER_BUFFER: 0.1
   xLength: 0
   zLength: 0
 --- !u!1 &4919787353541943116

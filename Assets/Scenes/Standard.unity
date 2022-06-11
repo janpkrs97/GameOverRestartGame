@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.7737838, g: 0.8210964, b: 0.95428425, a: 1}
+  m_IndirectSpecularColor: {r: 0.7737782, g: 0.8210952, b: 0.9542817, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -12648,6 +12648,7 @@ GameObject:
   - component: {fileID: 693486471}
   - component: {fileID: 693486470}
   - component: {fileID: 693486469}
+  - component: {fileID: 693486474}
   m_Layer: 0
   m_Name: Teleportation Area
   m_TagString: TeleportationArea
@@ -12811,13 +12812,26 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 693486468}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.75, y: 0.209, z: -0.03}
+  m_LocalPosition: {x: -1.75, y: 0.2, z: -0.03}
   m_LocalScale: {x: 1.16, y: 1, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1247042212}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &693486474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693486468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 728f186747cefc145a9c2e64bd29a454, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  telProv: {fileID: 0}
 --- !u!1001 &695554379
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30536,7 +30550,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 09ab09c4c72d1bc42b19fdae40567808, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0024356619
+      value: 0.0109
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 09ab09c4c72d1bc42b19fdae40567808, type: 3}
       propertyPath: m_LocalPosition.z

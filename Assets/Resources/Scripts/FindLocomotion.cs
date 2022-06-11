@@ -1,3 +1,4 @@
+﻿
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,11 +7,13 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class FindLocomotion : MonoBehaviour
 {
-    public TeleportationProvider teleportationProvider;
+    public GameObject telProvObj;
 
     void Awake()
     {
-        GameObject teleportationArea = GameObject.FindGameObjectWithTag("TeleportationArea");
-        //teleportationArea.GetComponent<TeleportationArea>().TeleportationProvider = teleportationProvider;
+        telProvObj = GameObject.FindGameObjectWithTag("TeleportationProvider");
+        Debug.Log(telProvObj);
+        TeleportationProvider telProv = telProvObj.GetComponent<TeleportationProvider>();
+        //this.gameObject.GetComponent<TeleportationArea>().TeleportationProvider = telProv;
     }
 }
