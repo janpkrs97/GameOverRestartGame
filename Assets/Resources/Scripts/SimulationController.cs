@@ -27,6 +27,9 @@ public class SimulationController : Singleton<SimulationController>
 
     private List<BehaviorButton> scenarioButtons = new List<BehaviorButton>();
 
+    [Header("Debugging")]
+    public bool riggingByRoot = false;
+
     void Start(){    
         SetupUI();
         if(students.Count <= 0) students = FindObjectsOfType<StudentAnimationController>().ToList();
