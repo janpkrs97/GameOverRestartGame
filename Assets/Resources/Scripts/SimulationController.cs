@@ -29,6 +29,7 @@ public class SimulationController : Singleton<SimulationController>
 
     [Header("Debugging")]
     public bool riggingByRoot = false;
+    [HideInInspector] public List<Scenario> customScenarioList = new List<Scenario>();
 
     void Start(){    
         SetupUI();
@@ -141,6 +142,10 @@ public class SimulationController : Singleton<SimulationController>
 
         if(scenarioContainer){
             List<Scenario> scenarios = Resources.LoadAll<Scenario>("Behaviors/Scenarios").ToList();
+            for(int i = 0;i < customScenarioList.Count;i++){
+                if(!customScenarioList[i]) return;
+                scenarios.Add(customScenarioList[i]);
+            }
             for(int i = 0;i < scenarios.Count;i++){
                 BehaviorButton btn = Instantiate(behaviorBtnPrefab, scenarioContainer);
                 btn.Set(scenarios[i]);

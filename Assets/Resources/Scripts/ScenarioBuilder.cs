@@ -63,8 +63,13 @@ public class ScenarioBuilder : MonoBehaviour
         }
 
         // Save Asset
-        AssetDatabase.CreateAsset(scenario, saveLocation + "/" + inputField.text + ".asset");
-        AssetDatabase.SaveAssets();
+        if(Debug.isDebugBuild){
+            AssetDatabase.CreateAsset(scenario, saveLocation + "/" + inputField.text + ".asset");
+            AssetDatabase.SaveAssets();
+        }
+        else{
+            SimulationController.Instance.customScenarioList.Add(scenario);
+        }
 
         // System Updates
         Debug.Log(inputField.text + " scenario created");
